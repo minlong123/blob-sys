@@ -2,6 +2,8 @@
 
 ## 概览
 ![image](https://github.com/Shomnipotence/DesignBlog/assets/6630660/cbc460cd-94ec-4f21-a4cb-654d32f69181)
+![image](https://github.com/Shomnipotence/DesignBlog/assets/6630660/8acd5b1a-aff5-4a16-8262-c46055a4b3a6)
+
 
 
 本主题旨在提供用简洁、现代、通用的博客主题。
