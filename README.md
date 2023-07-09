@@ -3,7 +3,11 @@
 ## 概览
 ![image](https://github.com/Shomnipotence/DesignBlog/assets/6630660/6f46fa4e-956a-4833-b68b-65054c0e3e69)
 
-本主题旨在提供标准的导航-列表-详情视图。其中列表为自动加载
+本主题旨在提供用简洁、现代、通用的博客主题。提供标准的导航-列表-详情视图。其中列表为自动加载
+
+## 在线演示
+
+http://design.ztu123.com/
 
 ## 基于FastAdmin
 
