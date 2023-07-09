@@ -1,7 +1,22 @@
+# Blog Theme
+
+## 概览
+![image](https://github.com/Shomnipotence/DesignBlog/assets/6630660/6f46fa4e-956a-4833-b68b-65054c0e3e69)
+
+本主题旨在提供用简洁、现代、通用的博客主题。
+- 提供标准的导航-列表-详情视图。其中列表为自动加载
+- 支持深色、浅色两种模式
+- 博客支持 Markdown
+
+## 在线演示
+
+http://design.ztu123.com/
+
+## 基于FastAdmin
+
 FastAdmin是一款基于ThinkPHP+Bootstrap的极速后台开发框架。
 
-
-## 主要特性
+### 主要特性
 
 * 基于`Auth`验证的权限管理系统
     * 支持无限级父子级权限继承，父级的管理员可任意增删改子级管理员及权限设置
@@ -34,11 +49,11 @@ FastAdmin是一款基于ThinkPHP+Bootstrap的极速后台开发框架。
 * 第三方支付(微信、支付宝)无缝整合，微信支持PC端扫码支付
 * 丰富的插件应用市场
 
-## 安装使用
+### 安装使用
 
 https://doc.fastadmin.net
 
-## 在线演示
+### 在线演示
 
 https://demo.fastadmin.net
 
@@ -48,22 +63,20 @@ https://demo.fastadmin.net
 
 提　示：演示站数据无法进行修改，请下载源码安装体验全部功能
 
-## 界面截图
+### 界面截图
 ![控制台](https://images.gitee.com/uploads/images/2020/0929/202947_8db2d281_10933.gif "控制台")
 
-## 问题反馈
-
-在使用中有任何问题，请使用以下联系方式联系我们
+### 问题反馈
 
 交流社区: https://ask.fastadmin.net
 
-QQ 1 群（满）、QQ 2 群（满）、QQ 3 群（满）、QQ 4 群（满）、QQ 5 群（满）、QQ 6 群（满）、[QQ 7 群](https://www.fastadmin.net/goto/qun)。
+[QQ 7 群](https://www.fastadmin.net/goto/qun)。
 
 Github: https://github.com/karsonzhang/fastadmin
 
 Gitee: https://gitee.com/karson/fastadmin
 
-## 特别鸣谢
+### 鸣谢
 
 感谢以下的项目,排名不分先后
 
@@ -86,7 +99,7 @@ Layer: https://layuion.com/layer/
 DropzoneJS: https://www.dropzonejs.com
 
 
-## 版权信息
+### 版权信息
 
 FastAdmin遵循Apache2开源协议发布，并提供免费使用。
 
