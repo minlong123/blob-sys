@@ -61,8 +61,6 @@ https://demo.fastadmin.net
 
 ### 问题反馈
 
-在使用中有任何问题，请使用以下联系方式联系我们
-
 交流社区: https://ask.fastadmin.net
 
 [QQ 7 群](https://www.fastadmin.net/goto/qun)。
