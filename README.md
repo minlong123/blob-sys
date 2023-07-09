@@ -5,7 +5,7 @@
 
 本主题旨在提供标准的导航-列表-详情视图。其中列表为自动加载
 
-## FastAdmin
+## 基于FastAdmin
 
 FastAdmin是一款基于ThinkPHP+Bootstrap的极速后台开发框架。
 
