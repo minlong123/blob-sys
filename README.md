@@ -69,7 +69,7 @@ Github: https://github.com/karsonzhang/fastadmin
 
 Gitee: https://gitee.com/karson/fastadmin
 
-### 特别鸣谢
+### 鸣谢
 
 感谢以下的项目,排名不分先后
 
