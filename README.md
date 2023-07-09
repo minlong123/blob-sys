@@ -1,12 +1,14 @@
 # Blog Theme
 
 ## 概览
-![image](https://github.com/Shomnipotence/DesignBlog/assets/6630660/6f46fa4e-956a-4833-b68b-65054c0e3e69)
+![image](https://github.com/Shomnipotence/DesignBlog/assets/6630660/cbc460cd-94ec-4f21-a4cb-654d32f69181)
+
 
 本主题旨在提供用简洁、现代、通用的博客主题。
 - 提供标准的导航-列表-详情视图。其中列表为自动加载
 - 支持深色、浅色两种模式
 - 博客支持 Markdown
+- 支持移动端
 
 ## 在线演示
 
