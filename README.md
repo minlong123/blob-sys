@@ -5,10 +5,11 @@
 
 本主题旨在提供标准的导航-列表-详情视图。其中列表为自动加载
 
+## FastAdmin
+
 FastAdmin是一款基于ThinkPHP+Bootstrap的极速后台开发框架。
 
-
-## 主要特性
+### 主要特性
 
 * 基于`Auth`验证的权限管理系统
     * 支持无限级父子级权限继承，父级的管理员可任意增删改子级管理员及权限设置
@@ -41,7 +42,7 @@ FastAdmin是一款基于ThinkPHP+Bootstrap的极速后台开发框架。
 * 第三方支付(微信、支付宝)无缝整合，微信支持PC端扫码支付
 * 丰富的插件应用市场
 
-## 安装使用
+### 安装使用
 
 https://doc.fastadmin.net
 
@@ -55,10 +56,10 @@ https://demo.fastadmin.net
 
 提　示：演示站数据无法进行修改，请下载源码安装体验全部功能
 
-## 界面截图
+### 界面截图
 ![控制台](https://images.gitee.com/uploads/images/2020/0929/202947_8db2d281_10933.gif "控制台")
 
-## 问题反馈
+### 问题反馈
 
 在使用中有任何问题，请使用以下联系方式联系我们
 
@@ -70,7 +71,7 @@ Github: https://github.com/karsonzhang/fastadmin
 
 Gitee: https://gitee.com/karson/fastadmin
 
-## 特别鸣谢
+### 特别鸣谢
 
 感谢以下的项目,排名不分先后
 
@@ -93,7 +94,7 @@ Layer: https://layuion.com/layer/
 DropzoneJS: https://www.dropzonejs.com
 
 
-## 版权信息
+### 版权信息
 
 FastAdmin遵循Apache2开源协议发布，并提供免费使用。
 
