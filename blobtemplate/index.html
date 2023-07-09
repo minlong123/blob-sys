@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+</head>
+<body>
+    <style>
+        fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
+        button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
+        article, aside, details, figcaption, figure, footer,header, hgroup, menu, nav, section,
+        summary, time, mark, audio, video {
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+        /** 重置文本格式元素 **/
+        a { text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        sup { vertical-align: text-top; } /* 重置, 减少对行高的影响 */
+        sub { vertical-align: text-bottom; }
+        h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal;}
+        address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+        /** 清除内外边距 **/
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        input,button,select,textarea{  
+        outline:none  
+        } 
+    
+    
+    </style>
+    
+    
+    
+    <style>
+        .lefttab{
+            position:fixed;
+            height:100%;
+            left:0;
+            width:56px;
+            border-right:2px solid #e3e3e3;
+            text-align:center;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+        }
+        .lefttab-con{
+            width:100%;
+            height:100px;
+            display:inline-block;
+            text-align:center;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+        }
+        .lefttab-con>a{
+            width:96%;
+            display:block;
+            text-align:center;
+            margin:0 auto;
+            padding:5px 0;
+            margin:8px 0;
+            
+        }
+        .lefttab-con>.active{
+            border-right:4px solid #000000;
+        }
+        .lefttab-con>a>img{
+            width: 21px;
+        }
+    </style>
+    
+    <div class="lefttab">
+    
+        <div class="lefttab-con">
+    
+            <a class="active" href="index.html"><img src="image/NavIconHome.svg" alt=""></a>
+            <a href="list.html"><img src="image/AnvIconList.svg" alt=""></a>
+            
+            <a href="index.html"><img src="image/NavIconGbook.svg" alt=""></a>
+            <a href="index.html"><img src="image/NavIconAbout.svg" alt=""></a>
+    
+        </div>
+    
+    </div>
+
+
+
+
+    <style>
+        .home{
+            margin-left:54px;
+            width:90%;
+            text-align:center;
+        }
+        .home>span{
+            display: inline-block;
+            font-size:50px;
+            margin-top:30px;
+        }
+    </style>
+    <div class="home">
+        <span>博客欢迎您</span>
+    </div>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,259 @@
+
+<script src="__CDN__/assets/libs/jquery/dist/jquery.min.js"></script>
+<script src="__CDN__/assets/layer/layer/layer.js"></script>
+
+<style>
+        body{
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Liberation Sans", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, SimSun, "WenQuanYi Zen Hei Sharp", sans-serif;
+        }
+
+        @media screen and (min-width: 768px){
+
+            .lefttab-con>a>img{
+                transition:all 0.2s ease;
+            }
+            .lefttab-con>a:hover img{
+                transform:scale(1.4);
+            }
+            .lefttab-con>a{
+                transition:all 0.2s ease;
+            }
+            .lefttab-con>a:hover{
+                /* border-right: 4px solid #000000; */
+                /* background: #eee; */
+            }
+
+            /* .btnchone{
+                transition:all 0.2s ease;
+            }
+            .btnchone:hover{
+                background:#000;
+                color:#FFF;
+                border: 2px solid #000;
+    
+            } */
+
+
+            .lefttab-con>a{
+                margin:0;
+                padding:0;
+                height: 56px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width:100%;
+            }
+            .lefttab-con{
+                height:224px;
+                position:relative;
+
+            }
+            .nav-line{
+                display:inline-block;
+                height:51px;
+                width:4px;
+                background:#000;
+                position:absolute;
+                right: -1px;
+                top:0;
+                transition:all 0.2s ease-in-out;
+            }
+        }
+
+
+        @media (prefers-color-scheme: dark) {
+
+            /* .nav-line{
+                background: #000 !important;;
+            } */
+
+        }
+
+</style>
+<!-- PC端导航 -->
+<div class="lefttab">
+    <div class="lefttab-con">
+
+        <a title="首页" class="active" data-index="0" href="/"><img id="leftoneimg" src="__CDN__/assets/image/NavIconHome.svg" title="首页" alt="首页"></a>
+        <a title="文章列表详情" href="/list.html" data-index="1"><img id="lefttwoimg" src="__CDN__/assets/image/AnvIconList.svg" title="文章列表详情" alt="文章列表详情"></a>
+        <a href="#" data-index="2"><img id="leftthreeimg" src="__CDN__/assets/image/NavIconGbook.svg" alt=""></a>
+        <a titlt="关于" href="/about.html" data-index="3"><img id="leftfourimg" titlt="关于" src="__CDN__/assets/image/NavIconAbout.svg" alt="关于"></a>
+
+        <span class="nav-line"></span>
+    </div>
+</div>
+
+
+
+<!-- 移动端导航 -->
+<div class="mobile-header">
+    <img src="__CDN__/assets/image/Navigation.svg" id="menu" alt="menu" title="menu">
+    <img src="__CDN__/assets/image/Close.svg" id="close" alt="menu" title="menu">
+</div>
+
+<div class="mobile-model"></div>
+<div class="mobile-nav">
+
+    <div class="mobile-nav-div">
+
+        <a class="active" href="/">
+            <img src="__CDN__/assets/image/NavIconHome.svg" alt="">
+            <span>首页</span>
+        </a>
+        <a href="/list.html"><img src="__CDN__/assets/image/AnvIconList.svg" alt=""><span>文章列表</span></a>
+        <a href="#"><img src="__CDN__/assets/image/NavIconGbook.svg" alt=""><span>评论</span></a>
+        <a href="/about.html"><img src="__CDN__/assets/image/NavIconAbout.svg" alt=""><span>关于</span></a>
+    </div>
+</div>
+
+
+
+
+<script>
+
+    if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+    //深色主题
+        console.log("深色主题")
+        $(".lefttab").css({
+            "borderColor":"#262626"
+        })
+        $(".nav-line").css({
+                "background":"#fff",
+            })
+        $("#leftoneimg").attr("src","__CDN__/assets/image/Home_White.svg");
+
+        $("#lefttwoimg").attr("src","__CDN__/assets/image/list_White.svg");
+        $("#leftthreeimg").attr("src","__CDN__/assets/image/gbook_White.svg");
+        $("#leftfourimg").attr("src","__CDN__/assets/image/about_White 1.svg");
+
+
+
+
+    }else{
+        console.log("浅色主题")
+    }
+
+
+
+
+    $(".mobile-nav>.mobile-nav-div>a").on("touchstart",function(){
+   
+        $(this).css({
+            "transform": "scale(0.9)",
+            "transition":" all 0.3s ease"
+        })
+    })
+
+    $(".mobile-nav>.mobile-nav-div>a").on("touchend",function(){
+   
+    $(this).css({
+        "transform": "scale(1)",
+        "transition":" all 0.3s ease"
+    })
+    })
+
+
+
+    $("#menu").click(function(){
+        $("#menu").css("display","none");
+        $("#close").css("display","block");
+        $(".mobile-model").css("display","flex");
+        $(".mobile-nav").css("display","flex");
+    })
+
+    $("#close").click(function(){
+
+        $("#menu").css("display","block");
+        $("#close").css("display","none");
+        $(".mobile-model").css("display","none");
+        $(".mobile-nav").css("display","none");
+
+
+    })
+
+    function sethoverline(index){
+        let juli=parseInt(index)*56;
+        $(".nav-line").css({
+            'transform':"translateY("+String(juli)+"px)",
+            'height':'46px',
+            'marginTop':"5px"
+        })
+    }
+
+
+    // $(".lefttab-con>a").mouseover(function(e){
+
+    //    let indexx=$(this).data("index");
+    //    sethoverline(indexx);
+
+    // })
+
+
+    // $(".lefttab-con>a").mouseout(function(e){
+
+    //    let indexx=$(".lefttab-con .active").data("index");
+    //    sethoverline(indexx);
+
+    // })
+
+
+    
+    $(".mobile-nav").click(function(){
+
+        $("#menu").css("display","block");
+        $("#close").css("display","none");
+        $(".mobile-model").css("display","none");
+        $(".mobile-nav").css("display","none");
+
+
+    })
+
+    
+    
+    function sizechan(){
+
+        let bodywidth=document.body.clientWidth;
+
+        if(bodywidth > 768){
+            
+            $("#menu").css("display","block");
+            $("#close").css("display","none");
+            $(".mobile-model").css("display","none");
+            $(".mobile-nav").css("display","none");
+        
+        }
+
+
+    }
+
+    window.onresize=function(){
+
+        sizechan();
+
+    }
+
+    let urls=window.location.href;
+    let allnav=$(".lefttab-con>a");
+    $(".lefttab-con a").removeClass("active");
+
+    if(!urls.includes("html")){
+        // 没有找到就是首页
+        $(".lefttab-con a").eq(0).addClass("active");
+        
+    }else{
+
+        for(let i=1;i<allnav.length;i++){
+
+            if(urls.includes($(allnav[i]).attr("href"))){
+                $(".lefttab-con a").eq(i).addClass("active");
+                break;
+            }
+        }
+    }
+
+    let ii=$(".lefttab-con .active").data("index");
+    sethoverline(ii);
+
+
+</script>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="__CDN__/assets/css/blobcommon.css" rel="stylesheet">
+    <title>关于</title>
+</head>
+<body>
+
+    {include file="common/header" /}
+
+    <style>
+        .home{
+            text-align: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index:-1;
+        }
+        .home>.home-div{
+            display:table;
+            vertical-align:middle;
+            margin:0 auto;
+            text-align:left;
+        }
+        .home span{
+            display: inline-block;
+            font-size:50px;
+            vertical-align:middle;
+            font-size: 21px;
+            letter-spacing: 0.23em;
+            color: #000000;
+            margin-left:13px;
+            font-weight:bold;
+        }
+        .home .home-log{
+            max-width:100%;
+            vertical-align:middle;
+            width:57px;
+        }
+        .ab-email{
+            margin-top:48px;
+            font-size: 14px;
+            letter-spacing: -0.02em;
+            color: #000000;
+
+
+        }
+        .ab-web{
+            margin-top:10px;
+            font-size: 14px;
+            letter-spacing: -0.02em;
+            color: #000000;
+
+        }
+        .ab-img{
+            margin-top:72px;
+            display: flex;
+            flex-direction: row;
+            justify-content:space-between;
+            align-items: center;
+            box-sizing:border-box;
+
+        }
+        .ab-img>a{
+            text-decoration:none;
+           
+        }
+    </style>
+
+
+
+    <div class="home">
+
+        <div class="home-div">
+            
+            <img class="home-log" src="__CDN__/assets/image/WebsiteLogoIcon@3x.png" alt="SHOMPINICE" title="SHOMPINICE">
+   
+            <span>SHOMPINICE</span>
+
+            <div class="ab-email">Email: Shompinice@gmail.com</div>
+
+            <div class="ab-web">Web: Shompinice.com</div>
+
+            <div class="ab-img">
+                <a href="https://dribbble.com/Shomnipotence" target="_blank"><img src="__CDN__/assets/image/DribbbleIcon.svg" title="Dribbble" alt="Dribbble"></a>
+                <a href="https://www.behance.net/Shompinice" target="_blank"><img src="__CDN__/assets/image/BehanceIcon.svg" title="Behance" alt="Behance"></a>
+                <a href="https://www.deviantart.com/shompinice" target="_blank"><img src="__CDN__/assets/image/DeviantartIcon.svg" title="DeviantArt" alt="DeviantArt"></a>
+                <a href="https://github.com/DiskTools/" target="_blank"><img src="__CDN__/assets/image/GithubIcon.svg" title="GitHub" alt="GitHub"></a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+        
+        if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+        //深色主题
+            $(".home").css({
+                "background":"#000",
+                'color':"#FFF"
+            })
+            $(".home>.home-div>div").css({
+                'color':"#FFF"
+            })
+            $(".home>.home-div>span").css({
+                'color':"#FFF"
+            })
+            console.log("深色主题")
+            $(".home-log").attr("src","__CDN__/assets/darkimg/WebsiteLogoIcon@3x_White.png");
+        }else{
+            console.log("浅色主题")
+            $(".home-log").attr("src","__CDN__/assets/image/WebsiteLogoIcon@3x.png");
+        }
+
+    </script>
+</body>
+</html>

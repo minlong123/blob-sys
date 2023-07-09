@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="__CDN__/assets/editormd/css/editormd.css" />
+
+    <?php
+    if(!empty($artcon)){
+?>
+    <title><?php echo $artcon['name'];?></title>
+    <meta name="Description" content="<?php echo $artcon['desction'];?>">
+    <?php }else{ ?>
+
+        <title>文章列表</title>
+
+        <?php }?>
+
+    
+
+
+
+    <link href="__CDN__/assets/css/blobcommon.css" rel="stylesheet">
+</head>
+<body>
+    
+{include file="common/header" /}
+
+
+
+<style>
+
+
+
+
+@media screen and (min-width:768px){
+
+    .blobbody{
+    box-sizing:border-box;
+    padding-left:56px;
+    width:100%;
+}
+
+
+    .blobbody>div{
+        display:inline-block;
+        float:left;
+    }
+
+    .leftlist{
+        width:19.37%;
+        height:100%;
+        position:fixed;
+        left:58px;
+        overflow:hidden;
+    }
+    .leftlist-two{
+        width:100%;
+        height:100%;
+        overflow-y:scroll;
+        padding-right: 17px;
+    }
+    .art-cons{
+        width: 76%;
+        height:1000px;
+        margin-left:19.37%;
+        position:relative;
+    }
+    .list-con{
+        width:84.5%;
+        float:right;
+        padding-top:63px;
+        padding-bottom: 54px;
+        position: relative;
+        left: 17px;
+    }
+    .contents{
+        width: 54.4%;
+    margin: 0 auto;
+    margin-top: 120px;
+    margin-bottom: 209px;;
+
+    }
+    .contents-title{
+        font-size: 37px;
+    font-weight: bold;
+    }
+    .contents-info{
+        font-size: 15px;
+    color: #808080;
+    margin-top: 38px;
+    letter-spacing:1px;
+    }
+    .contents-detail{
+        line-height: 20px;
+    margin-top: 38px;
+
+    }
+    .list-con-row{
+        margin-bottom:47px;
+        display:block;
+        text-decoration:none;
+        cursor:pointer;
+        padding-right: 17px;
+    }
+
+    .list-con-row:hover{
+        text-decoration:none;
+    }
+
+    .list-con-row:hover{
+        color:#000;
+    }
+
+    .list-con-tit{
+        font-weight: bold;
+        color: #000;
+        font-size: 18px;
+    }
+    .list-con-desc{
+        margin-top: 15px;
+        line-height:31px;
+        font-size:14px;
+        color:#000;
+        width:100%;
+        display: -webkit-box;
+        word-break: break-all;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        overflow-y: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp:3;   /*设置需要显示的文字行数*/
+            
+    }
+
+    .art-message{
+        margin-top:65px;
+    }
+    .art-form{
+        width:100%;
+    
+    }
+    .art-form>span{
+        display:inline-block;
+        font-size:16px;
+        font-weight:bold;
+    }
+    .art-form>.art-from-name{
+        width:40%;
+    }
+    .art-form>.art-from-email{
+        width:50%;
+        float: right;
+    }
+    .art-form input{
+        border:none;
+        border-bottom:2px solid #e3e3e3;
+        width:100%;
+        padding-bottom:8px;
+        height: 26px;
+        font-size:16px;
+        color:#000;
+    }
+    .from-input{
+        margin-top:10px;
+    }
+    .art-form-text{
+        margin-top:20px;
+    }
+    .art-form-text>textarea{
+        padding:12px 0;
+        width:100%;
+        border:none;
+        border-bottom:2px solid #e3e3e3;
+        resize: none;
+        font-size:16px;
+        color:#000;
+    }
+    .art-form-btn{
+        margin-top:34px;
+        width:100%;
+        text-align:right;
+   
+        
+    }
+    .art-form-btn>span{
+        display:inline-block;
+        width:103px;
+        height:32px;
+        border:2px solid #9e9e9e;
+        text-align:center;
+        line-height:32px;
+        color:#000;
+        font-weight:bold;
+        font-size:15px;
+        cursor:pointer;
+    }
+
+    .other-list{
+        margin-top:58px;
+        clear:both;
+    }
+    .other-list span{
+        display:inline-block;
+    }
+    .other-list-conc{
+        width:100%;
+        clear:both;
+        position:relative;
+        vertical-align:middle;
+        margin-bottom: 60px;
+    }
+
+
+    .other-list-conc>.other-title{
+        width: 30%;
+        color: #000;
+        font-size: 14px;
+        vertical-align: middle;
+        font-weight: bold;
+        line-height: 26px;
+
+    }
+    .other-list-conc>.other-desc{
+        width:60%;
+
+        color:#808080;
+        font-size:14px;
+        float:right;
+ 
+        line-height:30px;
+        display: -webkit-box;
+word-break: break-all;
+text-overflow: ellipsis;
+overflow: hidden;
+overflow-y: hidden;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 3;   /*设置需要显示的文字行数*/
+    vertical-align:middle;
+    
+    }
+    .contents-detail img{
+        max-width:100%;
+        height:auto!important;
+    }
+
+
+
+}
+
+
+@media screen and (max-width:768px) {
+    .blobbody{
+        box-sizing:border-box;
+        width:100%;
+    }
+
+    .art-cons{
+        display:none;
+    }
+
+    .leftlist{
+        width:100%;
+        overflow:hidden;
+    }
+    .leftlist-two{
+        width:100%;
+        height:100%;
+        text-align:left;
+    }
+
+    .list-con{
+        width:84.5%;
+        padding-top:20px;
+        padding-bottom:54px;
+        margin:0 auto;
+
+    }
+    .list-con-row{
+        margin-bottom:47px;
+        display:block;
+        text-decoration:none;
+        cursor:pointer;
+    }
+
+    .list-con-row:hover{
+        text-decoration:none;
+    }
+
+    .list-con-row:hover{
+        color:#000;
+    }
+
+    .list-con-tit{
+        font-weight: bold;
+        color: #000;
+        font-size: 18px;
+    }
+    .list-con-desc{
+        margin-top: 15px;
+        line-height: 21px;
+        font-size: 16px;
+        color:#000;
+        width:100%;
+        display: -webkit-box;
+        word-break: break-all;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        overflow-y: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;   /*设置需要显示的文字行数*/
+            
+    }
+
+}
+.editormd-preview-container, .editormd-html-preview{
+    padding: 0 !important;
+    font-size:16px;
+    line-height:38px;
+}
+@media (prefers-color-scheme: dark) {
+
+    body{
+        background:#000!important;
+        color: #FFF;
+    }
+    .art-form input{
+        background: #000!important;
+    }
+    .art-form-text>textarea{
+        background: #000!important;
+    }
+    #test-editormd{
+        background: #000;
+    color: #FFF;
+    }
+    .leftlist{
+        background:#000;
+
+    }
+    .list-con-tit{
+        color:#FFF;
+    }
+    .list-con-desc{
+        color:#FFF;
+    }
+    .other-list-conc>.other-title{
+        color:#FFF!important;
+    }
+    .other-list-conc>.other-desc{
+        color:#FFF!important;
+    }
+
+}
+
+
+
+
+</style>
+
+<div class="blobbody">
+
+    <div class="leftlist">
+
+        <div class="leftlist-two">
+
+            
+
+            <div class="list-con">
+
+                <?php
+                    foreach($artlist as $k=>$v){
+                ?>
+                <a href="javascript:void(0)" data-id="<?php echo $v['id'];?>" class="list-con-row">
+                    <div class="list-con-tit"><?php echo $v['name'];?></div>
+                    <div class="list-con-desc">
+                        <?php echo $v['desction'];?>
+                    </div>
+                </a>
+
+                <?php
+                   }
+                ?>
+
+            </div>
+
+        </div>
+    </div>
+    
+    
+    <div class="art-cons">
+
+
+        <div class="contents">
+
+            <?php
+                if(!empty($artcon)){
+            ?>
+            <div class="contents-title"><?php echo $artcon['name'];?></div>
+
+            <div class="contents-info"><?php echo $artcon['readnum'];?>人阅读: <?php echo $artcon['day'];?></div>
+
+            <div id="test-editormd" class="contents-detail">
+                <textarea style="display:none;"><?php echo $artcon["content"];?></textarea>
+            </div>
+            <?php } ?>
+
+            <div class="art-message">
+
+                <form id="fmm" action="">
+
+                
+                    <div class="art-form">
+                        <span class="art-from-name">
+                            <div>姓名</div>
+                            <div class="from-input from-name-input">
+                                <input name="username" id="usernainput" type="text">
+                                <?php
+                                    if(!empty($artcon)){
+                                ?>
+                                <input type="hidden" name="id" value="<?php echo $artcon['id'];?>">
+                                <?php } ?>
+                            </div>
+                        </span>
+        
+                        <span class="art-from-email">
+                            <div>EMAIL</div>
+                            <div class="from-input from-name-email">
+                                <input type="email" name="emails" class="emaiinput" type="text">
+                            </div>
+                        </span>
+        
+                    </div>
+        
+                    <div class="art-form-text">
+                        <textarea name="content" cols="30" class="coninput" rows="10" placeholder="请自觉遵守法律法规"></textarea>
+                    </div>
+        
+
+
+                    <style>
+
+
+                        .box {
+                          position: relative;
+                          width: 103px;
+                            height: 32px;
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+                          margin: 15px;
+                          color: #000;
+                        }
+                        
+                        .item {
+                          text-transform: uppercase;
+                          font-size: 14px;
+                          z-index: 99;
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+                          transition: 0.4s all ease;
+                        
+                            width: 103px;
+                            height: 32px;
+                            font-weight: bold;
+                            font-size: 15px;
+                            cursor: pointer;
+                        
+                        
+                        }
+                        .two {
+                          box-sizing: border-box;
+                              border: 2px solid #9e9e9e;
+                          position: relative;
+                        }
+                        .two:before {
+                          position: absolute;
+                          content: '';
+                          width: 0;
+                          height: 32px;
+                          transition: 0.4s all ease;
+                          background: #000;
+                          left: 0;
+                          z-index: -1;
+                        }
+                        .two:hover {
+                          color: #fff;
+                        }
+                        .two:hover:before {
+                          width: 102%;
+                          transition: 0.4s all ease;
+                        }
+                        
+                        .subbtn{
+                        position: relative;
+                        width: 100%;
+                        text-align: right;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-end;
+                        }
+
+                            </style>
+
+                    <div class="subbtn">
+
+                        <div class="box two">
+                            <div class="item btnchone">提交</div>
+                        </div>
+
+                    </div>
+
+
+
+
+                </form>
+
+    
+            </div>
+
+
+
+            <div class="other-list">
+
+                <?php
+
+                    if(!empty($comment)){
+
+                    foreach($comment as $k=>$v){
+                ?>
+                <div class="other-list-conc">
+                    <span class="other-title"> <?php echo $v['name'];?><br>
+                        <?php echo $v['createtime'];?></span>
+                    <span class="other-desc">
+                        <?php echo $v['content'];?>
+                    </span>
+
+                </div>
+                <?php }  } ?>
+
+
+            </div>
+        </div>
+        
+
+
+
+    </div>
+</div>
+
+
+
+<script src="__CDN__/assets/editormd/examples/js/jquery.min.js"></script>
+
+<script src="__CDN__/assets/editormd/editormd.min.js"></script>
+<script src="__CDN__/assets/editormd/lib/marked.min.js"></script>
+<script src="__CDN__/assets/editormd/lib/prettify.min.js"></script>
+<script src="__CDN__/assets/editormd/lib/raphael.min.js"></script>
+<script src="__CDN__/assets/editormd/lib/underscore.min.js"></script>
+<script src="__CDN__/assets/editormd/lib/sequence-diagram.min.js"></script>
+<script src="__CDN__/assets/editormd/lib/flowchart.min.js"></script>
+<script src="__CDN__/assets/editormd/lib/jquery.flowchart.min.js"></script>
+
+
+
+<script>
+
+
+    editormd.markdownToHTML("test-editormd", {
+        path : '__CDN__/assets/editormd/lib/',
+        htmlDecode: "style,script,iframe"
+    });
+
+
+    // var testEditor = editormd("test-editormd", {
+    //     width: "100%",
+    //     height: "auto",
+    //     path : '__CDN__/assets/editormd/lib/',
+    //     markdown : '',
+    //     codeFold : true,
+    //     saveHTMLToTextarea : true, 
+    //     searchReplace : true,
+    //     htmlDecode : "style,script,iframe|on*", 
+    //     emoji : true,
+    //     watch:false,
+    //     taskList : true,
+    //     tocm            : true,         // Using [TOCM]
+    //     tex : true,                   // 开启科学公式TeX语言支持，默认关闭
+    //     flowChart : true,             // 开启流程图支持，默认关闭
+    //     sequenceDiagram : true,       // 开启时序/序列图支持，默认关闭,
+    //     imageUpload : true,
+    //     imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+    //     imageUploadURL : "",
+    //     onload : function() {
+    //         console.log('onload', this);
+    //     }
+    // });
+    // testEditor.hideToolbar();
+    // testEditor.unwatch();
+    // testEditor.previewing();
+
+</script>
+
+
+<script>
+
+if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+  //深色主题
+    console.log("深色主题")
+    $(".btnchone").css({
+        "color":"#FFF"
+    })
+}else{
+    console.log("浅色主题")
+}
+
+
+$(".lefttab-con a").on("mousedown",function(){
+    $(this).find("img").css({
+        "transform": "scale(1)",
+        "transition":" all 0.5s ease"
+    })
+})
+
+$(".list-con-row").on("mousedown",function(){
+    $(this).css({
+        "transform": "scale(0.9)",
+        "transition":" all 0.5s ease"
+    })
+})
+
+
+
+    let bodywidth=document.body.clientWidth;
+    $(".list-con-row").click(function(){
+
+        let id=$(this).data("id");
+
+        if(bodywidth > 768){
+            window.open("/list.html?id="+id,"_Self");
+        }else{
+            window.open("/detail.html?id="+id,"_blank");
+        }
+        
+
+    })
+
+    if(bodywidth < 768){
+        document.getElementsByTagName("title")[0].innerText='博客列表';
+    }
+    
+
+    function istrue(val){
+        if(val == "" || val == null || val == undefined){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    var lastClickss = 0;
+    function lockClicks(){
+        var nowClick = new Date();
+        if (lastClickss === 0) {
+            lastClickss = nowClick;
+            return true;
+        } else {
+            if (Math.round((nowClick.getTime() - lastClickss.getTime())) > 1000) {
+                lastClickss = nowClick;
+                return true;
+            }
+            else {
+                lastClickss = nowClick;
+                return false
+            }
+        }
+    };
+
+
+    $('.btnchone').click(function(){
+
+        if(!lockClicks()){
+            return false;
+        }
+
+        if(!istrue($("#usernainput").val())){
+            layer.msg("评论姓名不能为空!");
+            return;
+        }
+
+        if(!istrue($(".emaiinput").val())){
+            layer.msg("评论邮箱不能为空!");
+            return;
+        }
+
+       if( !istrue($(".coninput").val()) ){
+            layer.msg("评论内容不能为空!");
+            return;
+        }
+
+
+        $.ajax({
+            type:'post',
+            url:"{:url('index/index/setmessage')}",
+            data:$('#fmm').serialize(),
+            success:function(res){
+                layer.msg(res.msg)
+
+            },
+            error:function(XMLHttpRequest){
+
+                layer.msg(res.msg)
+
+                // console.log("网络不稳定或站内流量过大,请稍后再试！");
+            },
+        },'json');
+
+
+
+    })
+
+</script>
+
+
+</body>
+</html>

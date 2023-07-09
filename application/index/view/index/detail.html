@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="__CDN__/assets/editormd/css/editormd.css" />
+    <?php
+    if(!empty($artcon)){
+?>
+    <title><?php echo $artcon['name'];?></title>
+    <meta name="Description" content="<?php echo $artcon['desction'];?>">
+    
+    <?php }else{ ?>
+        
+        <title>文章列表详情</title>
+
+        <?php }?>
+    <link href="__CDN__/assets/css/blobcommon.css" rel="stylesheet">
+</head>
+<body>
+    
+{include file="common/header" /}
+
+
+
+<style>
+
+
+
+    .blobbody{
+    box-sizing:border-box;
+
+    width:100%;
+}
+
+
+
+    
+    .art-cons{
+        width: 100%;
+    position: relative;
+    }
+
+    .contents{
+        width: 79%;
+    margin: 0 auto;
+    margin-top: 64px;
+    margin-bottom: 20px;
+
+    }
+    .contents-title{
+        font-size: 37px;
+    font-weight: bold;
+    }
+    .contents-info{
+        font-size: 15px;
+    color: #808080;
+    margin-top: 38px;
+    letter-spacing:1px;
+    }
+    .contents-detail{
+        line-height: 20px;
+    margin-top: 38px;
+
+    }
+ 
+
+    .art-message{
+        margin-top:65px;
+    }
+    .art-form{
+        width:100%;
+    
+    }
+    .art-form>span{
+        display:block;
+        font-size:16px;
+        font-weight:bold;
+        margin-bottom: 22px;
+    }
+
+
+    .art-form input{
+        border:none;
+        border-bottom:2px solid #e3e3e3;
+        width:100%;
+        padding-bottom:8px;
+        height: 25px;
+        font-size:16px;
+        color:#000;
+    }
+    .from-input{
+        margin-top:10px;
+    }
+    .art-form-text{
+        margin-top:20px;
+    }
+    .art-form-text>textarea{
+        padding:12px 0;
+        width:100%;
+        border:none;
+        border-bottom:2px solid #e3e3e3;
+        resize: none;
+        font-size:16px;
+        color:#000;
+    }
+    .art-form-btn{
+        margin-top:34px;
+        width:100%;
+        text-align:right;
+    }
+    .art-form-btn>span{
+        display:inline-block;
+        width:103px;
+        height:32px;
+        border:2px solid #9e9e9e;
+        text-align:center;
+        line-height:32px;
+        color:#000;
+        font-weight:bold;
+        font-size:15px;
+        cursor:pointer;
+    }
+
+    .other-list{
+        margin-top:58px;
+        clear:both;
+    }
+    .other-list span{
+        display:inline-block;
+    }
+    .other-list-conc{
+        width:100%;
+        clear:both;
+        position:relative;
+        vertical-align:middle;
+        margin-bottom: 60px;
+    }
+
+
+    .other-list-conc>.other-title{
+        width: 100%;
+        color: #000;
+        font-size:15px;
+        vertical-align: middle;
+        font-weight: bold;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+
+    }
+    .other-list-conc>.other-desc{
+        width: 100%;
+        color: #808080;
+        font-size: 17px;
+        line-height: 30px;
+        display: -webkit-box;
+        word-break: break-all;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        overflow-y: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        margin-top: 7px;
+    
+    }
+    .contents-detail img{
+        max-width:100%;
+        height:auto!important;
+    }
+
+    .editormd-preview-container, .editormd-html-preview{
+    padding: 0 !important;
+    font-size:16px;
+    line-height:25px;
+}
+
+</style>
+
+<div class="blobbody">
+
+    <div class="art-cons">
+
+
+        <div class="contents">
+
+            <?php
+                if(!empty($artcon)){
+            ?>
+            <div class="contents-title"><?php echo $artcon['name'];?></div>
+
+            <div class="contents-info"><?php echo $artcon['readnum'];?>人阅读: <?php echo $artcon['day'];?></div>
+
+            <div id="test-editormd" class="contents-detail">
+                <textarea style="display:none;"><?php echo $artcon["content"];?></textarea>
+            </div>
+
+
+            <?php } ?>
+
+            <div class="art-message">
+
+                <form id="fmm" action="">
+
+                
+                    <div class="art-form">
+                        <span class="art-from-name">
+                            <div>姓名</div>
+                            <div class="from-input from-name-input">
+                                <input name="username" id="usernainput" type="text">
+                                <input type="hidden" name="id" value="<?php echo $artcon['id'];?>">
+                            </div>
+                        </span>
+        
+                        <span class="art-from-name">
+                            <div>EMAIL</div>
+                            <div class="from-input from-name-email">
+                                <input type="email" name="emails" class="emaiinput" type="text">
+                            </div>
+                        </span>
+        
+                    </div>
+        
+                    <div class="art-form-text">
+                        <textarea name="content" cols="30" class="coninput" rows="10" placeholder="请自觉遵守法律法规"></textarea>
+                    </div>
+        
+                    <div class="art-form-btn">
+                        <span class="btnchone">提交</span>
+                    </div>
+                </form>
+    
+            </div>
+
+
+
+            <div class="other-list">
+
+                <?php
+                    foreach($comment as $k=>$v){
+                ?>
+                <div class="other-list-conc">
+                    <span class="other-title"> 
+
+                        <div>
+                            <?php echo $v['name'];?>
+                        </div>
+
+                        <div><?php echo $v['createtime'];?></div>
+                    </span>
+
+
+                    <span class="other-desc">
+                        <?php echo $v['content'];?>
+                    </span>
+
+                </div>
+                <?php } ?>
+
+
+            </div>
+        </div>
+        
+
+
+    
+    </div>
+</div>
+
+
+
+<script src="__CDN__/assets/editormd/examples/js/jquery.min.js"></script>
+
+<script src="__CDN__/assets/editormd/editormd.min.js"></script>
+<script src="__CDN__/assets/editormd/lib/marked.min.js"></script>
+<script src="__CDN__/assets/editormd/lib/prettify.min.js"></script>
+<script src="__CDN__/assets/editormd/lib/raphael.min.js"></script>
+<script src="__CDN__/assets/editormd/lib/underscore.min.js"></script>
+<script src="__CDN__/assets/editormd/lib/sequence-diagram.min.js"></script>
+<script src="__CDN__/assets/editormd/lib/flowchart.min.js"></script>
+<script src="__CDN__/assets/editormd/lib/jquery.flowchart.min.js"></script>
+
+<script>
+
+
+    editormd.markdownToHTML("test-editormd", {
+        path : '__CDN__/assets/editormd/lib/',
+        htmlDecode: "style,script,iframe"
+    });
+
+
+    var idd="<?php echo $artcon['id'];?>";
+    function startredd(){
+
+        let bodywidth=document.body.clientWidth;
+        if(bodywidth > 768){
+            window.open("/list.html?id="+idd,"_Self");
+        }
+ 
+    }
+    
+
+    window.onresize=function(){
+        
+        startredd();
+
+    }
+
+    startredd();
+
+
+
+    function istrue(val){
+        if(val == "" || val == null || val == undefined){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    var lastClickss = 0;
+    function lockClicks(){
+        var nowClick = new Date();
+        if (lastClickss === 0) {
+            lastClickss = nowClick;
+            return true;
+        } else {
+            if (Math.round((nowClick.getTime() - lastClickss.getTime())) > 1000) {
+                lastClickss = nowClick;
+                return true;
+            }
+            else {
+                lastClickss = nowClick;
+                return false
+            }
+        }
+    };
+
+
+    $('.btnchone').click(function(){
+
+        if(!lockClicks()){
+            return false;
+        }
+
+        if(!istrue($("#usernainput").val())){
+            layer.msg("评论姓名不能为空!");
+            return;
+        }
+
+        if(!istrue($(".emaiinput").val())){
+            layer.msg("评论邮箱不能为空!");
+            return;
+        }
+
+       if( !istrue($(".coninput").val()) ){
+            layer.msg("评论内容不能为空!");
+            return;
+        }
+
+
+        $.ajax({
+            type:'post',
+            url:"{:url('index/index/setmessage')}",
+            data:$('#fmm').serialize(),
+            success:function(res){
+                layer.msg(res.msg)
+
+            },
+            error:function(XMLHttpRequest){
+
+                layer.msg(res.msg)
+
+                // console.log("网络不稳定或站内流量过大,请稍后再试！");
+            },
+        },'json');
+
+
+
+    })
+
+</script>
+
+
+</body>
+</html>
